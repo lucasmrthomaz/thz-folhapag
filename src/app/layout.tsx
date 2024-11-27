@@ -16,12 +16,12 @@ export default function RootLayout({
 }>) {
   return (
 
-    <html lang="en">
+    <html lang="pt-BR">
       <body>
         
         <AppRouterCacheProvider>
-        <NavLinks/>
-          <Container maxWidth="lg" >
+          <NavLinks/>
+          <Container maxWidth="lg">
             {children}
           </Container>
         </AppRouterCacheProvider>

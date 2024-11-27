@@ -9,7 +9,7 @@ import CardActions from '@mui/material/CardActions';
 
 export default function CardResume(props: React.CustomComponentPropsWithRef<typeof String> ) {
     return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 250 }}>
       <CardActionArea>
         <CardMedia
           component='iframe'
