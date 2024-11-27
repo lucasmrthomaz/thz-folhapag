@@ -7,10 +7,10 @@ import Link from 'next/link'
 const styles = {
     navbar: {
       display: 'flex',
-      justifyContent: 'space-between',
+      justifyContent: 'space-evenly',
       alignItems: 'center',
       padding: '10px 20px',
-      backgroundColor: 'royalblue',
+      backgroundColor: '#222',
       color: '#fff',
     },
     logoContainer: {
@@ -45,6 +45,7 @@ export function NavLinks() {
       </li>
     </ul>
     <Avatar sx={{ bgcolor: deepOrange[500] }}>LT</Avatar>
+    
   </nav>
   )
 }

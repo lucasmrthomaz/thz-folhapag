@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import HeaderTipos from "../ui/components/HeaderTipos";
 import CardResume from "./ui/CardResume";
 
@@ -6,12 +5,11 @@ export default function DashboardPage() {
   return <div className="p-10" >
     <h1 className="text-3xl mb-5"> </h1>
 
-    <span className="flex-row"> 
-      <b>Filtro</b> 
-    <HeaderTipos />
-    </span>
-    
-    <div className="flex space-x-5">
+    <div className="flex justify-center mb-5">
+      <HeaderTipos />
+    </div>
+
+    <div className="flex space-x-5 justify-evenly">
       <CardResume title='Folhas Abertas'
         descricao='Folhas que ainda não foram processadas ou enviadas ao destinatario.' />
 
@@ -21,6 +19,6 @@ export default function DashboardPage() {
       <CardResume title='Folhas Fechadas'
         descricao='Folhas que foram enviadas com sucesso ao destinatario.' />
     </div>
-    
+
   </div>
 }

@@ -4,54 +4,54 @@ import Grid from '@mui/material/Grid2';
 export default function SolicitarOrdemForm() {
     const dataAtual = new Date(Date.now()).toLocaleString().split(',')[0]
     return <div>
-        <div className="space-x-5">
-            <FormGroup>
-                <Grid container spacing={2}>
 
-                    <Grid size={3}>
-                        <TextField required disabled id='dataSolicitacao' 
-                        label='Data Solicitação' 
+        <FormGroup>
+            <Grid container spacing={2} className="mt-5 mb-5">
+
+                <Grid size={3}>
+                    <TextField required disabled id='dataSolicitacao'
+                        label='Data Solicitação'
                         variant='outlined'
-                        placeholder={ dataAtual }
-                        value={dataAtual}/>
-                    </Grid>
+                        placeholder={dataAtual}
+                        value={dataAtual} />
+                </Grid>
 
-                    <Grid size={3}>
-                        <TextField required disabled id="inputUsuario"
-                         placeholder="lucas.thomaz"
-                        label="Usuário" 
+                <Grid size={3}>
+                    <TextField required disabled id="inputUsuario"
+                        placeholder="lucas.thomaz"
+                        label="Usuário"
                         variant="outlined"
                         value='lucas.thomaz' />
-                    </Grid>
+                </Grid>
 
-                    <Grid size={3}>
-                        <FormControl>
+                <Grid size={3}>
+                    <FormControl>
                         <TextField id="" label="CLCI" variant="outlined" />
                         <FormHelperText> * CLCI - Código de Lancamento Contabil Individual</FormHelperText>
-                        </FormControl>
-                    </Grid>
+                    </FormControl>
+                </Grid>
 
-                    <Grid size={3}>
-                        <FormControl>
+                <Grid size={3}>
+                    <FormControl>
                         <TextField id="" label="CCO" variant="outlined" />
                         <FormHelperText> * CCO - Código Centro Custo Operacional</FormHelperText>
-                        </FormControl>
-                    </Grid>
+                    </FormControl>
+                </Grid>
 
-                    <Grid size={3}>
+                <Grid size={3}>
                     <FormControl fullWidth>
-                    <InputLabel id="tipo-folha-pagamento">Tipo de folha</InputLabel>
+                        <InputLabel id="tipo-folha-pagamento">Tipo de folha</InputLabel>
                         <Select label='Tipo de folha'>
                             <MenuItem value={0}>Funcionário</MenuItem>
                             <MenuItem value={1}>Fornecedor</MenuItem>
-                            <MenuItem value={1}>Avulsa</MenuItem>
+                            <MenuItem value={2}>Avulsa</MenuItem>
                         </Select>
                         <FormHelperText> * Tipo de folha que deseja solicitar</FormHelperText>
-                        </FormControl>
-                    </Grid>
+                    </FormControl>
                 </Grid>
+            </Grid>
 
-            </FormGroup>
-        </div>
+        </FormGroup>
+
     </div>
 }
