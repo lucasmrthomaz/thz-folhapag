@@ -1,5 +1,6 @@
 import HeaderTipos from "../ui/components/HeaderTipos";
 import CardResume from "./ui/CardResume";
+import FaturasTable from "./ui/FaturasTable";
 
 export default function DashboardPage() {
   return <div className="p-10" >
@@ -20,5 +21,7 @@ export default function DashboardPage() {
         descricao='Folhas que foram enviadas com sucesso ao destinatario.' />
     </div>
 
+    <FaturasTable/>
+    
   </div>
 }
