@@ -3,10 +3,10 @@ import CardResume from "./ui/CardResume";
 import FaturasTable from "./ui/FaturasTable";
 
 export default function DashboardPage() {
-  return <div className="p-10" >
-    <h1 className="text-3xl mb-5"> </h1>
+  return <div className="p-5" >
+    <h1 className="text-3xl mb-5 font-sans font-thin"> VISÃO RESUMIDA </h1>
 
-    <div className="flex justify-center mb-5">
+    <div className="flex justify-left mb-5">
       <HeaderTipos />
     </div>
 
@@ -22,6 +22,6 @@ export default function DashboardPage() {
     </div>
 
     <FaturasTable/>
-    
+
   </div>
 }
