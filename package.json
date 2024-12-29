@@ -2,6 +2,7 @@
   "name": "thz-folhapag",
   "version": "0.1.0",
   "private": true,
+  "main": "src/app/page.tsx",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,7 +18,6 @@
     "@mui/material": "^6.1.8",
     "@mui/material-nextjs": "^6.1.8",
     "@mui/x-data-grid": "^7.22.3",
-    "@toolpad/core": "^0.10.0",
     "next": "^15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

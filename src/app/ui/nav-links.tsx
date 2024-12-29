@@ -38,6 +38,9 @@ export function NavLinks() {
         <Link href="/dashboard">Dashboard</Link>
       </li>
       <li style={styles.menuItem}>
+        <Link href="/dashboard/funcionarios">Funcionários</Link>
+      </li>
+      <li style={styles.menuItem}>
         <Link href="/dashboard/solicitar-ordem">Solicitar Ordem</Link>
       </li>
       <li style={styles.menuItem}>

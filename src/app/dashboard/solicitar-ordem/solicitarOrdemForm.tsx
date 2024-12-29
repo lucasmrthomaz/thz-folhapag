@@ -1,4 +1,4 @@
-import { FormControl, FormGroup, FormHelperText, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { FormControl, FormGroup, FormHelperText, Input, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 
 export default function SolicitarOrdemForm() {
@@ -49,6 +49,23 @@ export default function SolicitarOrdemForm() {
                         <FormHelperText> * Tipo de folha que deseja solicitar</FormHelperText>
                     </FormControl>
                 </Grid>
+
+                <Grid size={3}>
+                    <FormControl fullWidth>
+                        <InputLabel id="tipo-folha-pagamento">Valor total</InputLabel>
+                        <TextField id="" label="Valor total" variant="outlined" />
+                        <FormHelperText> * Valor total para folha de pagamento</FormHelperText>
+                    </FormControl>
+                </Grid>
+
+                <Grid size={3}>
+                    <FormControl fullWidth>
+                        <InputLabel id="tipo-folha-pagamento">Nome beneficiario</InputLabel>
+                        <TextField id="" label="Nome" variant="outlined" />
+                        <FormHelperText> * Nome do beneficiario da folha</FormHelperText>
+                    </FormControl>
+                </Grid>
+
             </Grid>
 
         </FormGroup>
