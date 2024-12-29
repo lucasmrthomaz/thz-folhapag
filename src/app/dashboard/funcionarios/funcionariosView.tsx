@@ -6,8 +6,9 @@ import { useState } from "react";
 
 export default function FolhaView() {
     const [dataAtual] = useState(new Date().toLocaleDateString());
-    const urlListarTodosFunc = 'http://localhost:3000/api/sfp-mock';
-
+    //const urlListarTodosFunc = 'http://localhost:3000/api/sfp-mock';
+    const urlListarTodosFunc = 'http://localhost:8080/api/funcionarios';
+    
     const [funcionarios, setFuncionario] = React.useState([]);
 
     React.useEffect(() => {
