@@ -61,7 +61,7 @@ export function NavLinks() {
       </div>
       <ul style={styles.menuList}>
         <li style={styles.menuItem}>
-          <Link href="/dashboard" style={styles.menuLink}>Dashboard</Link>
+          <Link href="/dashboard" style={styles.menuLink as React.CSSProperties}>Dashboard</Link>
         </li>
         <li style={styles.menuItem}>
           <Button
@@ -85,7 +85,7 @@ export function NavLinks() {
           </Menu>
         </li>
         <li style={styles.menuItem}>
-          <Link href="/dashboard/suporte" style={styles.menuLink}>Suporte</Link>
+          <Link href="/dashboard/suporte" style={styles.menuLink as React.CSSProperties}>Suporte</Link>
         </li>
       </ul>
       <Avatar sx={{ bgcolor: deepOrange[500] }}>LT</Avatar>
