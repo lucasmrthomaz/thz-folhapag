@@ -1,94 +1,102 @@
 'use client'
 
-import Avatar from '@mui/material/Avatar';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Drawer, List, ListItem, ListItemText, Avatar } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { deepOrange } from '@mui/material/colors';
 import Link from 'next/link';
-import { Button, Menu, MenuItem } from '@mui/material';
-import { useState } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-
-const styles = {
-    navbar: {
-      display: 'flex',
-      justifyContent: 'space-evenly',
-      alignItems: 'center',
-      padding: '10px 20px',
-      backgroundColor: '#222',
-      color: '#fff',
-    },
-    logoContainer: {
-      display: 'flex',
-      alignItems: 'center',
-    },
-    menuList: {
-      display: 'flex',
-      listStyle: 'none',
-      alignItems: 'center',
-    },
-    menuItem: {
-      marginLeft: '20px',
-      display: 'flex',
-      alignItems: 'center',
-    },
-    menuLink: {
-      color: '#fff',
-      textDecoration: 'none',
-      padding: '6px 8px',
-      fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
-      fontWeight: 500,
-      fontSize: '0.875rem',
-      textTransform: 'uppercase',
-      lineHeight: 1.75,
-    }
-};
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export function NavLinks() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const open = Boolean(anchorEl);
-  
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleClose = () => {
     setAnchorEl(null);
   };
 
+  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const menuItems = (
+    <List>
+      <ListItem  component="a" href="/dashboard">
+        <ListItemText primary="Dashboard" />
+      </ListItem>
+      <ListItem  component="a" href="/dashboard/funcionarios">
+        <ListItemText primary="Funcionários" />
+      </ListItem>
+      <ListItem  component="a" href="/dashboard/solicitar-ordem">
+        <ListItemText primary="Solicitar Ordem" />
+      </ListItem>
+      <ListItem  component="a" href="/dashboard/suporte">
+        <ListItemText primary="Suporte" />
+      </ListItem>
+    </List>
+  );
+
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.logoContainer}>
-        <span className='text-xl'> Folha de Pagamento </span>
-      </div>
-      <ul style={styles.menuList}>
-        <li style={styles.menuItem}>
-          <Link href="/dashboard" style={styles.menuLink as React.CSSProperties}>Dashboard</Link>
-        </li>
-        <li style={styles.menuItem}>
-          <Button
-            color="inherit"
-            onClick={handleClick}
-            endIcon={<KeyboardArrowDownIcon />}
-          >
-            Gestão
-          </Button>
-          <Menu
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleClose}>
-              <Link href="/dashboard/funcionarios">Funcionários</Link>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <Link href="/dashboard/solicitar-ordem">Solicitar Ordem</Link>
-            </MenuItem>
-          </Menu>
-        </li>
-        <li style={styles.menuItem}>
-          <Link href="/dashboard/suporte" style={styles.menuLink as React.CSSProperties}>Suporte</Link>
-        </li>
-      </ul>
-      <Avatar sx={{ bgcolor: deepOrange[500] }}>LT</Avatar>
-    </nav>
-  )
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" style={{ flexGrow: 1 }}>
+            Folha de Pagamento
+          </Typography>
+          {!isMobile && (
+            <div>
+              <Link href="/dashboard" passHref>
+                <Typography variant="button" color="inherit" style={{ marginRight: '16px' }}>
+                  Dashboard
+                </Typography>
+              </Link>
+              <Typography
+                variant="button"
+                color="inherit"
+                onClick={handleClick}
+                style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }}
+              >
+                Gestão
+                <KeyboardArrowDownIcon />
+              </Typography>
+              <Menu
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>
+                  <Link href="/dashboard/funcionarios">Funcionários</Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href="/dashboard/solicitar-ordem">Solicitar Ordem</Link>
+                </MenuItem>
+              </Menu>
+              <Link href="/dashboard/suporte" passHref>
+                <Typography variant="button" color="inherit">
+                  Suporte
+                </Typography>
+              </Link>
+            </div>
+          )}
+          <Avatar sx={{ bgcolor: deepOrange[500] }}>LT</Avatar>
+        </Toolbar>
+      </AppBar>
+      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+        {menuItems}
+      </Drawer>
+    </>
+  );
 }

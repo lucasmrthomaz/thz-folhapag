@@ -76,7 +76,7 @@ const rows = [
   createData('10','Lucas Thomaz','26/11/2024','Em processamento','Fornecedor'),
 ];
 
-export default function FaturasTable() {
+export default function FolhaTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 

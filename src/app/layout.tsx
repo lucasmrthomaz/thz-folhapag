@@ -15,17 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
     <html lang="pt-BR">
       <body>
-        
         <AppRouterCacheProvider>
-          <NavLinks/>
-          <Container maxWidth="lg">
+          <NavLinks />
+          <Container maxWidth="lg" sx={{ padding: { xs: 2, sm: 3, md: 4 } }}>
             {children}
           </Container>
         </AppRouterCacheProvider>
-
       </body>
     </html>
   );
