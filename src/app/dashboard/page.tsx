@@ -7,7 +7,7 @@ export default function DashboardPage() {
     <div className="p-5">
       <h1 className="text-3xl mb-5 font-sans font-thin">VISÃO RESUMIDA</h1>
       
-      <Button variant="contained" color="primary" className="p-15 mt-5" href="/dashboard/folha">
+      <Button variant="contained" color="primary" className="p-15 mt-10 mb-10" href="/dashboard/folha">
           Todas as Folhas <ArrowForwardSharp />
         </Button>
 
