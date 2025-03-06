@@ -1,29 +1,26 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardActions from '@mui/material/CardActions';
+import React from 'react';
+import { Card, CardContent, CardMedia, Typography, Button, CardActionArea, CardActions } from '@mui/material';
 
-export default function CardResume(props: React.CustomComponentPropsWithRef<typeof String> ) {
-    return (
-    <Card sx={{ maxWidth: 650, maxHeight: 280 }}>
+interface CardResumeProps {
+  quantidade?: number;
+  title: string;
+  descricao: string;
+}
+
+const CardResume: React.FC<CardResumeProps> = ({ quantidade = 0, title, descricao }) => {
+  return (
+    <Card sx={{ maxWidth: 620, maxHeight: 280 }}>
       <CardActionArea>
-        <CardMedia
-          component='iframe'
-          height="23"
-        />
+        <CardMedia component='iframe' height="23" />
         <CardContent>
-        <Typography gutterBottom variant="h2" component="div" className='text-center'>
-            {props.quantidade ? 'N/A' : 0}
+          <Typography gutterBottom variant="h2" component="div" className='text-center'>
+            {quantidade || 'N/A'}
           </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            {props.title}
+            {title}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-           {props.descricao}
+            {descricao}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -34,4 +31,6 @@ export default function CardResume(props: React.CustomComponentPropsWithRef<type
       </CardActions>
     </Card>
   );
-}
+};
+
+export default CardResume;

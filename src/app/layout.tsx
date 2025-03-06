@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { Container } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 import { NavLinks } from "./ui/nav-links";
 
 export const metadata: Metadata = {

@@ -14,17 +14,17 @@ export default function DashboardPage() {
 
         <CardResume
           title="Folhas Abertas"
-          descricao="Folhas que ainda não foram processadas ou enviadas ao destinatario."
+          descricao="Ainda não processadas."
         />
 
         <CardResume
           title="Folhas Processando"
-          descricao="Folhas que estão em processamento."
+          descricao="Na fila de processamento."
         />
 
         <CardResume
           title="Folhas Fechadas"
-          descricao="Folhas que foram enviadas com sucesso ao destinatario."
+          descricao="Enviadas/emitidas com sucesso."
         />
       </div>
 
