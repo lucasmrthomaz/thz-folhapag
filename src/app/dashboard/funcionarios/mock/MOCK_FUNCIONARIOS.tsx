@@ -2,6 +2,7 @@
 export const MOCK_FUNCIONARIOS = [
   {
     id: 1,
+    matriculaFuncionario: "F001",
     dataAdmissao: "01/01/2024",
     nome: "João Silva",
     cargo: "Desenvolvedor",
