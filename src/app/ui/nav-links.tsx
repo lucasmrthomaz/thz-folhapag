@@ -57,7 +57,7 @@ export function NavLinks() {
             Folha de Pagamento
           </Typography>
           {!isMobile && (
-            <div className='ml-5 mr-5'>
+            <div className='mr-3'>
               <Link href="/dashboard" passHref>
                 <Typography variant="button" color="inherit" style={{ marginRight: '16px' }}>
                   Dashboard
