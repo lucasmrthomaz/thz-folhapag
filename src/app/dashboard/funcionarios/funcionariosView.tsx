@@ -30,10 +30,6 @@ export default function FolhaView() {
     fetchData();
   }, []);
 
-  const handleBackToHome = () => {
-    window.history.back()
-  };
-
   const handleChangePage = (event: any, newPage: React.SetStateAction<number>) => {
     setPage(newPage);
   };
@@ -107,7 +103,7 @@ export default function FolhaView() {
       <Fab
         color="secondary"
         aria-label="go back"
-        onClick={handleBackToHome}
+        href="/dashboard"
         style={{ position: 'fixed', bottom: 16, right: 16 }}
       >
         <ArrowBackSharp />
