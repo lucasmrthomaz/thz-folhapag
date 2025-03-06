@@ -8,7 +8,7 @@ import { MOCK_FUNCIONARIOS } from "./mock/MOCK_FUNCIONARIOS";
 import { ArrowBackSharp } from "@mui/icons-material";
 
 export default function FolhaView() {
-  const urlListarTodosFunc = process.env.NEXT_PUBLIC_API_URL+'/api/sfp-mock' || 'http://localhost:3000/api/sfp-mock';
+  const urlListarTodosFunc = process.env.NEXT_PUBLIC_API_URL+'api/sfp-mock' || 'http://localhost:3000/api/sfp-mock';
 
   const [funcionarios, setFuncionario] = React.useState(MOCK_FUNCIONARIOS);
   const [page, setPage] = React.useState(0);
