@@ -4,7 +4,7 @@
   "private": true,
   "main": "src/app/page.tsx",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,13 +13,14 @@
     "@emotion/cache": "^11.13.5",
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
+    "@faker-js/faker": "^9.8.0",
     "@fontsource/roboto": "^5.1.0",
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.1.8",
     "@mui/material-nextjs": "^6.1.8",
     "@mui/x-data-grid": "^7.22.3",
     "@vercel/speed-insights": "^1.1.0",
-    "next": "^15.0.3",
+    "next": "^15.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "styled-components": "^6.1.13"

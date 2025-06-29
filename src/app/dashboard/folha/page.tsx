@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react';
-import FolhaTable from '../ui/FolhaTable';
 import { Fab } from '@mui/material';
 import { ArrowBackSharp } from '@mui/icons-material';
+import FolhaTable from '../ui/FolhaTable';
 
 const handleBackToHome = () => {
     window.history.back()
@@ -19,7 +19,7 @@ const FolhaPage = () => {
                 color="secondary"
                 aria-label="go back"
                 onClick={handleBackToHome}
-                style={{ position: 'fixed', bottom: 16, right: 16 }}
+                style={{ position: 'fixed', bottom: 16, left: 16 }}
             >
                 <ArrowBackSharp />
             </Fab>

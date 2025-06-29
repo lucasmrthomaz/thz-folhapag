@@ -8,22 +8,28 @@ import { MOCK_FUNCIONARIOS } from "./mock/MOCK_FUNCIONARIOS";
 import { ArrowBackSharp } from "@mui/icons-material";
 
 export default function FolhaView() {
-  const urlListarTodosFunc = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/sfp-mock`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/sfp-mock`;
 
   const [funcionarios, setFuncionario] = React.useState(MOCK_FUNCIONARIOS);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(8);
 
+  /**
+   * Fetches the list of funcionarios from the API or uses mock data if the API call fails.
+   * This effect runs once when the component mounts.
+   */
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(urlListarTodosFunc);
+        // Try to fetch from API, fallback to mock if fails
+        const response = await fetch(apiUrl);
         const data = await response.json();
         if (data && data.length > 0) {
           setFuncionario(data);
         }
       } catch (error) {
         console.error('Houve erro...', error);
+        setFuncionario(MOCK_FUNCIONARIOS);
       }
     };
 
@@ -104,7 +110,7 @@ export default function FolhaView() {
         color="secondary"
         aria-label="go back"
         href="/dashboard"
-        style={{ position: 'fixed', bottom: 16, right: 16 }}
+        style={{ position: 'fixed', bottom: 16, left: 16 }}
       >
         <ArrowBackSharp />
       </Fab>
